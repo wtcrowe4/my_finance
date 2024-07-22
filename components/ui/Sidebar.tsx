@@ -16,7 +16,7 @@ const Sidebar = ({ user }: SidebarProps) => {
         <Link href="/"
           className="mb-12 cursor-pointer items-center gap-2">
             <Image src='/icons/logo.svg' width={50} height={50} alt='My Finance Logo' 
-              className="size-[24px] max-xl:size-14" />
+              className="size-[50px] max-xl:size-14" />
             <h1 className="sidebar-logo">My Finance</h1>
         </Link>
       
