@@ -1,8 +1,23 @@
-import Header from '@/components/ui/HeaderBox'
-import TotalBalance from '@/components/ui/TotalBalanceBox'
+import Header from '@/components/HeaderBox'
+import RightSidebar from '@/components/RightSidebar'
+import TotalBalance from '@/components/TotalBalanceBox'
 
 const Home = () => {
-  const loggedIn = { firstName: 'John', lastName: 'Doe' }
+  const loggedIn: User = { 
+    $id: '123',
+    email: 'john.doe@example.com',
+    userId: '456',
+    dwollaCustomerUrl: 'https://example.com',
+    firstName: 'John',
+    lastName: 'Doe',
+    dwollaCustomerId: '',
+    address1: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    dateOfBirth: '',
+    ssn: ''
+  }
 
   return (
     <section className="home">
@@ -20,7 +35,15 @@ const Home = () => {
             totalCurrentBalance={10000}
           />
         </header>
+
+        Recent Transactions
       </div>
+
+      <RightSidebar 
+        user={loggedIn}
+        transactions={[]}
+        banks={[]}
+        />
     </section>
   )
 }
