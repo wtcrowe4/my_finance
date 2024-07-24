@@ -157,7 +157,7 @@
   .right-sidebar {
     @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex xl:overflow-y-scroll 2xl:w-[355px] !important;
   }
-  /* max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px]    w-[225px] */
+  /* max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px]    xl:w-[225px] */
   .profile-banner {
     @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
