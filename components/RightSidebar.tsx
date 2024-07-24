@@ -3,6 +3,49 @@ import Link from 'next/link'
 import BankCard from './BankCard'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
+
+  banks = [
+    {
+      $id: '123',
+      appwriteItemId: '456',
+      name: 'Chase Bank',
+      currentBalance: 6000,
+      mask: '1234',
+      type: 'checking',
+      userId: '789',
+      accountId: '...',
+      bankId: '...',
+      accessToken: '...',
+      fundingSourceUrl: '...',
+      sharableId: '...',
+      id: '...',
+      availableBalance: 0,
+      officialName: '...',
+      institutionId: '...',
+      subtype: '...'
+    },
+    {
+      $id: '123',
+      appwriteItemId: '456',
+      name: 'Bank of America',
+      currentBalance: 2000,
+      mask: '1234',
+      type: 'checking',
+      userId: '789',
+      accountId: '...',
+      bankId: '...',
+      accessToken: '...',
+      fundingSourceUrl: '...',
+      sharableId: '...',
+      id: '...',
+      availableBalance: 0,
+      officialName: '...',
+      institutionId: '...',
+      subtype: '...'
+    },
+  ]
+
+
   return (
     <aside className="right-sidebar">
         <section className="flex flex-col pb-8">
