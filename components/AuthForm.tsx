@@ -48,7 +48,7 @@ const AuthForm = ({ type }: { type: string }) => {
       try {
         // Sign up with Appwrite & create plaid token
         
-        if(type === 'sign-up') {
+        if(type === 'register') {
           const userData = {
             firstName: data.firstName!,
             lastName: data.lastName!,
@@ -67,7 +67,7 @@ const AuthForm = ({ type }: { type: string }) => {
           setUser(newUser);
         }
 
-        if(type === 'sign-in') {
+        if(type === 'login') {
           const response = await signIn({
             email: data.email,
             password: data.password,
@@ -99,9 +99,9 @@ const AuthForm = ({ type }: { type: string }) => {
             <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
               {user 
                 ? 'Link Account'
-                : type === 'sign-in'
-                  ? 'Sign In'
-                  : 'Sign Up'
+                : type === 'login'
+                  ? 'Login'
+                  : 'Register'
               }
               <p className="text-16 font-normal text-gray-600">
                 {user 
@@ -120,7 +120,7 @@ const AuthForm = ({ type }: { type: string }) => {
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {type === 'sign-up' && (
+              {type === 'register' && (
                 <>
                   <div className="flex gap-4">
                     <CustomInput control={form.control} name='firstName' label="First Name" placeholder='Enter your first name' />
@@ -150,8 +150,8 @@ const AuthForm = ({ type }: { type: string }) => {
                       <Loader2 size={20} className="animate-spin" /> &nbsp;
                       Loading...
                     </>
-                  ) : type === 'sign-in' 
-                    ? 'Sign In' : 'Sign Up'}
+                  ) : type === 'login' 
+                    ? 'Login' : 'Register'}
                 </Button>
               </div>
             </form>
@@ -159,12 +159,12 @@ const AuthForm = ({ type }: { type: string }) => {
 
           <footer className="flex justify-center gap-1">
             <p className="text-14 font-normal text-gray-600">
-              {type === 'sign-in'
+              {type === 'login'
               ? "Don't have an account?"
               : "Already have an account?"}
             </p>
-            <Link href={type === 'sign-in' ? '/sign-up' : '/sign-in'} className="form-link">
-              {type === 'sign-in' ? 'Sign up' : 'Sign in'}
+            <Link href={type === 'login' ? '/register' : '/login'} className="form-link">
+              {type === 'login' ? 'Register' : 'Login'}
             </Link>
           </footer>
         </>
