@@ -6,22 +6,22 @@ import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
 import { getLoggedInUser } from '@/lib/actions/user.actions';
 
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
-  // const loggedIn: User = { 
-  //   $id: '123',
-  //   email: 'john.doe@example.com',
-  //   userId: '456',
-  //   dwollaCustomerUrl: 'https://example.com',
-  //   firstName: 'John',
-  //   lastName: 'Doe',
-  //   dwollaCustomerId: '',
-  //   address1: '',
-  //   city: '',
-  //   state: '',
-  //   postalCode: '',
-  //   dateOfBirth: '',
-  //   ssn: ''
-  // }
-  const loggedIn = await getLoggedInUser();
+  const loggedIn: User = { 
+    $id: '123',
+    email: 'john.doe@example.com',
+    userId: '456',
+    dwollaCustomerUrl: 'https://example.com',
+    firstName: 'John',
+    lastName: 'Doe',
+    dwollaCustomerId: '',
+    address1: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    dateOfBirth: '',
+    ssn: ''
+  }
+  //const loggedIn = await getLoggedInUser();
   const accounts = await getAccounts({ 
     userId: loggedIn.$id 
   })
